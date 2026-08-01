@@ -25,17 +25,22 @@ ALLOWED_HOSTS = [
 # APPLICATIONS
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 
-    # tus apps
-    "autenticacion",
+    'autenticacion',
+    'estudiantes.apps.EstudiantesConfig',
+    'inscripcion',
+    'inscripciones',
+    'kardex',
+    'usuarios',
+    'ia',
+    'asistente_ia',
 ]
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
