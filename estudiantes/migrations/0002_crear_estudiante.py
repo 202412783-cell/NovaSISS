@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RunSQL(
             """
-            CREATE TABLE IF NOT EXISTS "ESTUDIANTE" (
+            CREATE TABLE IF NOT EXISTS estudiante (
                 id SERIAL PRIMARY KEY
             );
             """,
