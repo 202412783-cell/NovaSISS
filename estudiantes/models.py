@@ -109,7 +109,8 @@ class Estudiante(models.Model):
 
 
     class Meta:
-        db_table = "ESTUDIANTE"
+        managed = True
+        db_table = "estudiante"
 
 
     def __str__(self):
