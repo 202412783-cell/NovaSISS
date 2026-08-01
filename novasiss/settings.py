@@ -52,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = "NovaSISS.urls"
+ROOT_URLCONF = "novasiss.urls"
 
 
 TEMPLATES = [
@@ -76,7 +76,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = "NovaSISS.wsgi.application"
+WSGI_APPLICATION = "novasiss.wsgi.application"
 
 
 
