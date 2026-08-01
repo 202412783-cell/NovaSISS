@@ -109,7 +109,7 @@ class Estudiante(models.Model):
 
 
     class Meta:
-        managed = True
+        managed = False
         db_table = "estudiante"
 
 
