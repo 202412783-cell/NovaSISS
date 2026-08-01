@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "novasiss.onrender.com",
     "squishier-thermos-staining.ngrok-free.dev"
 ]
 CSRF_TRUSTED_ORIGINS = [
