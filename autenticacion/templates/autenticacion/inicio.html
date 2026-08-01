@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>NovaSISS - Inicio</title>
+
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+font-family:Arial, sans-serif;
+background:#f7f8ff;
+
+}
+
+
+.header{
+
+background:white;
+padding:25px;
+text-align:center;
+border-bottom:1px solid #ddd;
+
+}
+
+
+.logo{
+
+font-size:55px;
+font-weight:bold;
+
+}
+
+
+.rosa{
+
+color:#e85ca8;
+
+}
+
+
+.azul{
+
+color:#24479c;
+
+}
+
+
+.umss{
+
+letter-spacing:8px;
+color:#24479c;
+
+}
+
+
+
+.container{
+
+padding:35px;
+
+}
+
+
+
+.bienvenida{
+
+background:#edf1ff;
+padding:30px;
+border-radius:25px;
+
+}
+
+
+
+h1{
+
+color:#24479c;
+
+}
+
+
+
+.info{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+
+}
+
+
+
+.dato{
+
+background:white;
+padding:20px;
+border-radius:20px;
+
+}
+
+
+.dato strong{
+
+color:#e85ca8;
+font-size:18px;
+
+}
+
+
+
+
+.modulos{
+
+margin-top:30px;
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:25px;
+border-top:6px solid #e85ca8;
+box-shadow:0 5px 15px #ddd;
+
+min-height:250px;
+
+}
+
+
+
+.card h2{
+
+color:#24479c;
+
+}
+
+
+
+button{
+
+background:#24479c;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:12px;
+cursor:pointer;
+
+}
+
+
+
+a{
+
+text-decoration:none;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="header">
+
+
+<div class="logo">
+
+<span class="rosa">
+Nova
+</span>
+
+<span class="azul">
+SISS
+</span>
+
+
+</div>
+
+
+<div class="umss">
+UMSS
+</div>
+
+
+<br>
+
+
+<a href="/cerrar-sesion/">
+
+<button>
+
+Cerrar sesión
+
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
+<div class="container">
+
+
+
+<div class="bienvenida">
+
+
+<h1>
+Bienvenido estudiante 🌸
+</h1>
+
+
+
+<div class="info">
+
+
+
+<div class="dato">
+
+<strong>
+Nombre
+</strong>
+
+<br>
+
+{{ estudiante.nombres_est }}
+
+{{ estudiante.apellidos_est }}
+
+
+</div>
+
+
+
+
+<div class="dato">
+
+<strong>
+Código SIS
+</strong>
+
+<br>
+
+{{ estudiante.cod_sis_est }}
+
+
+</div>
+
+
+
+
+
+<div class="dato">
+
+<strong>
+Carrera
+</strong>
+
+<br>
+
+{{ estudiante.id_carrera.nombre }}
+
+
+</div>
+
+
+
+
+
+<div class="dato">
+
+<strong>
+Estado
+</strong>
+
+<br>
+
+Activo
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="modulos">
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+💳 Pago Matrícula
+</h2>
+
+
+
+{% if pago %}
+
+
+<p>
+Estado:
+
+<b>
+{{ pago.estado_validacion }}
+</b>
+
+</p>
+
+
+
+<p>
+
+Monto:
+
+Bs. {{ pago.monto_pago }}
+
+</p>
+
+
+
+<p>
+
+Fecha:
+
+{{ pago.fecha_pago }}
+
+</p>
+
+
+
+{% else %}
+
+
+<p>
+No existe pago registrado
+</p>
+
+
+{% endif %}
+
+
+
+<a href="/pago/">
+
+<button>
+Ver pago
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🔑 Código Acceso
+</h2>
+
+
+
+{% if codigo_acceso %}
+
+
+<p>
+
+Usuario:
+
+<b>
+{{ codigo_acceso.usuario }}
+</b>
+<p>
+
+Clave:
+
+{{ codigo_acceso.clave_acceso }}
+
+</p>
+</p>
+
+
+
+<p>
+
+Estado:
+
+{{ codigo_acceso.estado }}
+
+</p>
+
+
+<p>
+
+Acceso habilitado
+
+</p>
+
+
+
+{% else %}
+
+
+<p>
+Código no generado
+</p>
+
+
+{% endif %}
+
+
+
+<a href="/codigo/">
+
+<button>
+Ver código
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+📚 Oferta Académica
+</h2>
+
+
+
+<p>
+Materias disponibles
+</p>
+
+
+<p>
+Docentes y grupos
+</p>
+
+
+
+<a href="/oferta/">
+
+<button>
+Ver materias
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+📝 Inscripción
+</h2>
+
+
+<p>
+Seleccionar materias
+</p>
+
+
+<p>
+Confirmar registro académico
+</p>
+
+
+<a href="/oferta/">
+
+<button>
+
+Ingresar
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🕒 Horario
+</h2>
+
+
+<p>
+Clases programadas
+</p>
+
+
+<p>
+Aulas asignadas
+</p>
+
+
+
+<a href="/horario/">
+
+<button>
+
+Ver horario
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+📄 Kardex
+</h2>
+
+
+<p>
+Notas finales
+</p>
+
+
+<p>
+Estado académico
+</p>
+
+
+
+<a href="/kardex/">
+
+
+<button>
+
+Ver Kardex
+
+</button>
+
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</body>
+
+</html>

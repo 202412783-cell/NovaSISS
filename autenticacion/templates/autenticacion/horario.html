@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Horario NovaSISS
+</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+background:#f7f8ff;
+padding:30px;
+
+}
+
+
+h1{
+
+color:#24479c;
+
+}
+
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:20px;
+border-top:6px solid #e85ca8;
+margin-bottom:25px;
+
+}
+
+
+
+table{
+
+width:100%;
+background:white;
+border-collapse:collapse;
+border-radius:15px;
+overflow:hidden;
+
+}
+
+
+
+th{
+
+background:#24479c;
+color:white;
+padding:15px;
+
+}
+
+
+
+td{
+
+padding:15px;
+text-align:center;
+border-bottom:1px solid #ddd;
+
+}
+
+
+
+button{
+
+background:#24479c;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:10px;
+
+}
+
+
+
+a{
+
+text-decoration:none;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+<h1>
+🕒 Horario Académico NovaSISS
+</h1>
+
+
+
+<div class="card">
+
+<h2>
+
+{{ estudiante.nombres_est }}
+
+{{ estudiante.apellidos_est }}
+
+</h2>
+
+
+<p>
+
+Código SIS:
+
+{{ estudiante.cod_sis_est }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<table>
+
+
+<tr>
+
+<th>
+Día
+</th>
+
+
+<th>
+Hora
+</th>
+
+
+<th>
+Materia
+</th>
+
+
+<th>
+Docente
+</th>
+
+
+<th>
+Aula
+</th>
+
+
+</tr>
+
+
+
+{% for h in horarios %}
+
+
+
+<tr>
+
+
+<td>
+
+{{ h.dia }}
+
+</td>
+
+
+
+<td>
+
+{{ h.hora_inicio }}
+
+-
+
+{{ h.hora_fin }}
+
+</td>
+
+
+
+<td>
+
+{{ h.id_grupo.id_materia.nombre }}
+
+</td>
+
+
+
+<td>
+
+{{ h.id_grupo.id_docente.nombres }}
+
+{{ h.id_grupo.id_docente.apellidos }}
+
+</td>
+
+
+
+<td>
+
+{{ h.id_aula.nombre_aula }}
+
+</td>
+
+
+</tr>
+
+
+
+{% empty %}
+
+
+
+<tr>
+
+<td colspan="5">
+
+No tienes horarios registrados
+
+</td>
+
+</tr>
+
+
+
+{% endfor %}
+
+
+
+</table>
+
+
+
+<br>
+
+
+<a href="/inicio/">
+
+<button>
+
+Volver al inicio
+
+</button>
+
+</a>
+
+
+
+</body>
+
+
+</html>

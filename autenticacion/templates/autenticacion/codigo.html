@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Código de Acceso NovaSISS
+</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+background:#f7f8ff;
+padding:40px;
+
+}
+
+
+.card{
+
+background:white;
+padding:30px;
+border-radius:20px;
+border-top:6px solid #e85ca8;
+
+}
+
+
+h1{
+
+color:#24479c;
+
+}
+
+
+button{
+
+background:#24479c;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:10px;
+
+}
+
+
+a{
+
+text-decoration:none;
+
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1>
+🔑 Código de Acceso
+</h1>
+
+
+<div class="card">
+
+
+<h2>
+
+{{ estudiante.nombres_est }}
+
+{{ estudiante.apellidos_est }}
+
+</h2>
+
+
+
+{% if codigo_acceso %}
+
+
+<p>
+
+<b>Usuario:</b>
+
+{{ codigo_acceso.usuario }}
+
+</p>
+
+
+
+<p>
+
+<b>Estado:</b>
+
+{{ codigo_acceso.estado }}
+
+</p>
+
+
+
+<p>
+
+<b>Fecha generación:</b>
+
+{{ codigo_acceso.fecha_generacion }}
+
+</p>
+
+
+
+{% else %}
+
+
+<p>
+No existe código generado
+</p>
+
+
+{% endif %}
+
+
+
+<br>
+
+
+<a href="/inicio/">
+
+<button>
+Volver
+</button>
+
+</a>
+
+
+
+</div>
+
+
+</body>
+
+</html>

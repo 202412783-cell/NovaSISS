@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Inscripción Exitosa - NovaSISS
+</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+background:#f7f8ff;
+padding:40px;
+text-align:center;
+
+}
+
+
+.card{
+
+background:white;
+width:500px;
+margin:auto;
+padding:40px;
+border-radius:25px;
+border-top:6px solid #e85ca8;
+box-shadow:0 5px 20px #ddd;
+
+}
+
+
+
+h1{
+
+color:#24479c;
+
+}
+
+
+
+.materia{
+
+font-size:22px;
+color:#e85ca8;
+font-weight:bold;
+
+}
+
+
+
+button{
+
+background:#24479c;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:10px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="card">
+
+
+<h1>
+✅ Inscripción realizada correctamente
+</h1>
+
+
+
+<h2>
+Estudiante:
+</h2>
+
+
+<p>
+
+{{ estudiante.nombres_est }}
+
+{{ estudiante.apellidos_est }}
+
+</p>
+
+
+
+<h2>
+Materia seleccionada:
+</h2>
+
+
+<p class="materia">
+
+
+{{ grupo.id_materia.nombre }}
+
+
+</p>
+
+
+
+<h2>
+Docente:
+</h2>
+
+
+<p>
+
+{{ grupo.id_docente.nombres }}
+
+{{ grupo.id_docente.apellidos }}
+
+</p>
+
+
+
+<h2>
+Estado:
+</h2>
+
+
+<p>
+
+Inscrita
+
+</p>
+
+
+
+<br>
+
+
+<a href="/inicio/">
+
+<button>
+
+Volver al inicio
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

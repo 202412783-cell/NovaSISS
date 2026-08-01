@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Pago Matrícula NovaSISS
+</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+background:#f7f8ff;
+padding:40px;
+
+}
+
+
+.card{
+
+background:white;
+padding:30px;
+border-radius:20px;
+border-top:6px solid #e85ca8;
+
+}
+
+
+
+h1{
+
+color:#24479c;
+
+}
+
+
+button{
+
+background:#24479c;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:10px;
+
+}
+
+
+a{
+
+text-decoration:none;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<h1>
+💳 Pago de Matrícula
+</h1>
+
+
+
+<div class="card">
+
+
+<h2>
+
+{{ estudiante.nombres_est }}
+
+{{ estudiante.apellidos_est }}
+
+</h2>
+
+
+
+{% if pago %}
+
+
+<p>
+<b>Estado:</b>
+
+{{ pago.estado_validacion }}
+
+</p>
+
+
+<p>
+<b>Monto:</b>
+
+Bs. {{ pago.monto_pago }}
+
+</p>
+
+
+<p>
+<b>Fecha:</b>
+
+{{ pago.fecha_pago }}
+
+</p>
+
+
+<p>
+<b>Tipo de pago:</b>
+
+{{ pago.tipo_pago }}
+
+</p>
+
+
+
+{% else %}
+
+
+<p>
+No existe pago registrado
+</p>
+
+
+{% endif %}
+
+
+
+<br>
+
+
+<a href="/inicio/">
+
+<button>
+Volver
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+</body>
+
+</html>

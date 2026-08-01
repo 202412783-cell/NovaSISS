@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Oferta Académica NovaSISS
+</title>
+
+
+<style>
+
+body{
+
+font-family:Arial;
+background:#f7f8ff;
+padding:30px;
+
+}
+
+
+
+h1{
+
+color:#24479c;
+
+}
+
+
+
+.card{
+
+background:white;
+padding:25px;
+margin-bottom:20px;
+border-radius:20px;
+border-top:6px solid #e85ca8;
+
+}
+
+
+
+button{
+
+background:#24479c;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+cursor:pointer;
+
+}
+
+
+
+.bloqueado{
+
+background:#28a745;
+color:white;
+padding:10px 20px;
+border-radius:10px;
+display:inline-block;
+font-weight:bold;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<h1>
+📚 Oferta Académica NovaSISS
+</h1>
+
+
+
+
+{% for materia in materias %}
+
+
+
+<div class="card">
+
+
+<h2>
+
+{{ materia.nombre }}
+
+</h2>
+
+
+
+<p>
+
+Créditos:
+
+{{ materia.creditos }}
+
+</p>
+
+
+
+<h3>
+
+Grupos disponibles
+
+</h3>
+
+
+
+
+{% for grupo in materia.grupos %}
+
+
+
+<p>
+
+<b>Docente:</b>
+
+{{ grupo.id_docente.nombres }}
+
+{{ grupo.id_docente.apellidos }}
+
+</p>
+
+
+
+<p>
+
+<b>Cupo:</b>
+
+{{ grupo.cupo_maximo }}
+
+</p>
+
+
+
+
+{% if materia.inscrita %}
+
+
+<div class="bloqueado">
+
+✓ Materia ya inscrita
+
+</div>
+
+
+
+{% else %}
+
+
+
+<a href="/seleccionar/{{ grupo.id_grupo }}/">
+
+
+<button>
+
+Seleccionar
+
+</button>
+
+
+</a>
+
+
+{% endif %}
+
+
+
+
+<hr>
+
+
+
+{% empty %}
+
+
+<p>
+
+No existen grupos disponibles
+
+</p>
+
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+{% empty %}
+
+
+
+<h2>
+No existen materias disponibles
+</h2>
+
+
+
+{% endfor %}
+
+
+
+
+
+</body>
+
+
+</html>
