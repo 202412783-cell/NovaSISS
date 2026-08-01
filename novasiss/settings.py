@@ -86,6 +86,8 @@ WSGI_APPLICATION = "novasiss.wsgi.application"
 
 
 # DATABASE POSTGRESQL RENDER
+import os
+import dj_database_url
 
 DATABASES = {
     "default": dj_database_url.config(
