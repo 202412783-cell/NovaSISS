@@ -110,7 +110,7 @@ class Estudiante(models.Model):
 
     class Meta:
         managed = False
-        db_table = "ESTUDIANTE"
+        db_table = 'ESTUDIANTE'
 
 
     def __str__(self):
